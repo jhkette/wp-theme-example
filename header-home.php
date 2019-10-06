@@ -20,7 +20,7 @@
 	<?php wp_head(); ?>
 </head>
 
-
+<body <?php body_class(); ?>>
 <div class="banner">
   <div class="header">
     <div class="header-inner container clear">
@@ -32,13 +32,20 @@
         </span>
       </label>
       <div class="navigation">
-        <ul class="navigation-menu">
+        <!-- <ul class="navigation-menu">
           <li class="navigation-item"><a href="#about">About</a></li>
           <li class="navigation-item"><a href="#ingredients">Ingredients</a></li>
           <li class="navigation-item"><a href="#menu">Menu</a></li>
           <li class="navigation-item"><a href="#reviews">Reviews</a></li>
           <li class="navigation-item"><a href="#reservations">Reservations</a></li>
-        </ul>
+        </ul> -->
+       <?php wp_nav_menu( array(
+				'theme_location' => 'menu-1',
+        'menu_id'        => 'primary-menu',
+        'menu_class' => 'navigation-menu',
+        // 'container_class' => 'navigation'
+			  ));
+			?>
         <ul class="navigation-social">
           <li class="navigation-item-social"><a class="social social-twitter" href="#"><span class="sr">Twitter</span></a></li>
           <li class="navigation-item-social"><a class="social social-facebook" href="#"><span class="sr">Facebook</span></a></li>
